@@ -1,66 +1,151 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+/* -----------------------------------
+   GLOBAL RESET
+----------------------------------- */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+:root {
+    --clr-primary: #ffffff;
+    --clr-accent: #1b76d1;
+    --clr-dark: rgba(0, 0, 0, 0.65);
+    --max-width: 1200px;
+
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2.5rem;
+    --space-xl: 4rem;
+
+    --radius: 8px;
+    --font-main: "Inter", sans-serif;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
+
 body {
-	line-height: 1;
+    font-family: var(--font-main);
+    color: var(--clr-primary);
+    background: #f5f5f5;
+    line-height: 1.6;
 }
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
+
 
 /* Custom Styles for Vanguard Website */
 
-/* header styles */
+/* header header styles */
 .hero-header {
-    background-image: url('images/hero-background.jpg');
+    background-image: url('images/vanguard-hero.jpg');
     background-size: cover;
     background-position: center;
-    color: #fff;
-    padding: 6rem 2rem;
-    position: relative;
+    background-repeat: no-repeat;
+  padding: var(--space-lg) var(--space-md);
+  position: relative;
+  text-align: center;
 }
 
+/* Dark overlay behind hero content */
+.hero-header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 0;
+}
+
+/* Navigation */
 .main-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    z-index: 2;
 }
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.logo {
+    width: 42px;
+    height: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: var(--space-md);
+}
+
+.nav-links a {
+    color: var(--clr-primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* Hero Content */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    margin-top: var(--space-xl);
+    padding: var(--space-lg) var(--space-md);
+    background: var(--clr-dark);
+    border-radius: var(--radius);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-content h2 {
+    font-size: 1.9rem;
+    margin-bottom: var(--space-sm);
+}
+
+.hero-content p {
+    font-size: 1rem;
+    margin-bottom: var(--space-md);
+}
+
+.cta-btn {
+    display: inline-block;
+    background: var(--clr-accent);
+    color: var(--clr-primary);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* Responsive Breakpoints */
+
+/* Tablet */
+@media (min-width: 600px) {
+    .hero-content h2 {
+        font-size: 2.2rem;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+    }
+}
+
+/* Desktop */
+@media (min-width: 900px) {
+    .hero-header {
+        padding: var(--space-xl) var(--space-lg);
+        text-align: left;
+    }
+
+    .hero-content {
+        margin-left: 0;
+        max-width: 450px;
+        text-align: left;
+    }
+}
+
