@@ -494,12 +494,13 @@ h3 {
 /* BAR CHART */
 #bar-chart {
   display: flex;
-  justify-content: center;
-  gap: clamp(8px, 2vw, 24px);
+  justify-content: space-evenly;
+  gap: clamp(6px, 1.5vw, 16px);
   align-items: flex-end;
-  height: 220px;
+  height: 320px;
+  width: 100%;
   background: #1b76d1; /* Vanguard blue */
-  padding: var(--space-sm);
+  padding: var(--space-md) var(--space-sm) var(--space-lg) var(--space-sm);
   border-radius: var(--radius);
   max-width: 700px;
   margin: 0 auto;
@@ -507,7 +508,9 @@ h3 {
 
 /* Bars */
 .bar {
-  width: clamp(30px, 8vw, 45px);
+  flex: 1;
+  min-width: 0;
+  max-width: 80px;
   background: #3d3d3d; /* matching gray */
   border-radius: var(--radius);
   height: var(--height);
@@ -656,7 +659,7 @@ footer {
     grid-template-columns: 1fr 1fr;
     column-gap: var(--space-lg);
     row-gap: var(--space-sm);
-    align-items: start;
+    align-items: stretch;
   }
 
   #results > h2:first-of-type,
@@ -664,18 +667,22 @@ footer {
     grid-column: 1 / -1;
   }
 
-  #results > h2:nth-of-type(2),
-  #results > table {
+  .profits-container {
     grid-column: 1;
   }
 
-  #results > h2:nth-of-type(3),
-  #results > #bar-chart {
+  .growth-container {
     grid-column: 2;
+    display: flex;
+    flex-direction: column;
   }
 
-  #results table,
-  #bar-chart {
+  .growth-container #bar-chart {
+    flex: 1;
+  }
+
+  .profits-container table,
+  .growth-container #bar-chart {
     margin: 0;
     max-width: 100%;
   }
