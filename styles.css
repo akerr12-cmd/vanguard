@@ -4,48 +4,135 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 :root {
@@ -68,6 +155,15 @@ table {
 
   --radius: 8px;
   --max-width: 1200px;
+
+  --fs-site-title: clamp(22px, 2.2vw, 30px);
+  --fs-hero-title: clamp(16px, 5.5vw, 42px);
+  --fs-heading: clamp(20px, 4.2vw, 36px);
+  --fs-subheading: clamp(16px, 2.8vw, 22px);
+  --fs-body: clamp(14px, 1.4vw, 16px);
+  --fs-table: clamp(14px, 1.4vw, 16px);
+  --fs-input: clamp(15px, 1.5vw, 17px);
+  --fs-footer: clamp(12px, 1.1vw, 14px);
 }
 
 body {
@@ -79,9 +175,8 @@ body {
 
 h2,
 h3 {
-  padding-left: 12px;   /* subtle, readable indent */
+  padding-left: 12px; /* subtle, readable indent */
 }
-
 
 /* HEADER & HERO */
 .hero-header {
@@ -109,7 +204,7 @@ h3 {
   left: 0;
   width: 100%;
   height: 120px; /* adjust height as needed */
-  background: rgba(0, 0, 0, 0.90);
+  background: rgba(0, 0, 0, 0.9);
   z-index: 5;
 }
 
@@ -119,10 +214,13 @@ h3 {
   left: 0;
   width: 100%;
   height: 8px;
-  background: linear-gradient( to bottom, rgba(27, 118, 209, 1), rgba(27, 118, 209, 0) );
+  background: linear-gradient(
+    to bottom,
+    rgba(27, 118, 209, 1),
+    rgba(27, 118, 209, 0)
+  );
   z-index: 6;
 }
-
 
 /* NAVIGATION */
 .nav-left {
@@ -135,7 +233,7 @@ h3 {
 }
 
 .site-title {
-  font-size: 24px;
+  font-size: var(--fs-site-title);
   font-weight: 700;
   color: var(--clr-blue);
   margin: 0;
@@ -225,24 +323,24 @@ h3 {
   margin: 180px auto 180px auto;
   background: rgba(0, 0, 0, 0.35);
   width: 100%;
-  max-width: 400px;
+  max-width: 100%;
   text-align: center;
 }
 
 .hero-content h2 {
-  font-size: 24px;
+  font-size: var(--fs-hero-title);
   font-weight: 700;
   letter-spacing: -0.5px;
   line-height: 1.15;
   text-align: center;
   padding: var(--space-sm);
-  white-space: normal;     /* allow natural wrapping */
+  white-space: normal;
   overflow: visible;
   text-overflow: unset;
 }
 
 .hero-content p {
-    font-size: 14px;
+  font-size: var(--fs-body);
   margin-bottom: var(--space-md);
   text-align: center;
 }
@@ -266,12 +364,12 @@ h3 {
   max-width: var(--max-width);
   text-align: center;
   line-height: 1.35;
-  font-size: 14px;
+  font-size: var(--fs-body);
   font-weight: 600;
 }
 
 #expertise h2 {
-  font-size: 29px;
+  font-size: var(--fs-heading);
   font-weight: 800;
   margin-bottom: var(--space-sm);
   color: #0d1b2a;
@@ -297,9 +395,13 @@ h3 {
 
 #offerings h2 {
   text-align: left;
-  font-size: 29px;
+  font-size: var(--fs-heading);
   font-weight: 800;
   color: #0d1b2a;
+}
+
+#offerings > h2 {
+  grid-column: 1 / -1;
 }
 
 #offerings article {
@@ -312,13 +414,13 @@ h3 {
 
 #offerings article h3 {
   margin-bottom: var(--space-xs);
-  font-size: 18px;
+  font-size: var(--fs-subheading);
   font-weight: 700;
 }
 
 #offerings article p {
   color: #e8f1ff;
-  font-size: 14px;
+  font-size: var(--fs-body);
 }
 
 /* RESULTS SECTION */
@@ -331,8 +433,8 @@ h3 {
 }
 
 #results h2 {
-    text-align: left;
-  font-size: 29px;
+  text-align: left;
+  font-size: var(--fs-heading);
   font-weight: 800;
   margin-bottom: var(--space-md);
 }
@@ -340,7 +442,7 @@ h3 {
 #results p {
   max-width: 650px;
   margin: 0 auto var(--space-lg);
-  font-size: 14px;
+  font-size: var(--fs-body);
 }
 
 /* PROFITS TABLE */
@@ -371,7 +473,7 @@ h3 {
   padding: var(--space-sm);
   font-weight: 700;
   text-align: center;
-  font-size: 15px;
+  font-size: var(--fs-table);
   color: white;
   border: 1px solid #3d3d3d; /* matching gray */
 }
@@ -380,7 +482,7 @@ h3 {
 #results td {
   padding: var(--space-sm);
   border: 1px solid #3d3d3d; /* matching gray */
-  font-size: 15px;
+  font-size: var(--fs-table);
   text-align: center;
 }
 
@@ -393,11 +495,11 @@ h3 {
 #bar-chart {
   display: flex;
   justify-content: center;
-  gap: var(--space-md);
+  gap: clamp(8px, 2vw, 24px);
   align-items: flex-end;
   height: 220px;
   background: #1b76d1; /* Vanguard blue */
-  padding: var(--space-md);
+  padding: var(--space-sm);
   border-radius: var(--radius);
   max-width: 700px;
   margin: 0 auto;
@@ -405,7 +507,7 @@ h3 {
 
 /* Bars */
 .bar {
-  width: 45px;
+  width: clamp(30px, 8vw, 45px);
   background: #3d3d3d; /* matching gray */
   border-radius: var(--radius);
   height: var(--height);
@@ -419,7 +521,7 @@ h3 {
   bottom: -26px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 14px;
+  font-size: var(--fs-body);
   color: white;
   text-align: center; /* ensure centered */
 }
@@ -434,7 +536,7 @@ h3 {
 
 #contact h2 {
   text-align: left;
-  font-size: 29px;
+  font-size: var(--fs-heading);
   margin-bottom: var(--space-md);
 }
 
@@ -442,7 +544,7 @@ h3 {
   max-width: 650px;
   margin: 0 auto var(--space-lg);
   text-align: left;
-  font-size: 14px;
+  font-size: var(--fs-body);
 }
 
 /* Contact form style */
@@ -455,7 +557,7 @@ h3 {
 
 #contact label {
   display: block;
-  font-size: 14px;
+  font-size: var(--fs-body);
 }
 
 #contact input,
@@ -464,7 +566,7 @@ h3 {
   background: var(--clr-white);
   border: 3px solid var(--clr-blue);
   color: var(--clr-white);
-  font-size: 16px;
+  font-size: var(--fs-input);
   padding: 14px 0px;
 }
 
@@ -480,7 +582,7 @@ h3 {
   border: none;
   border-radius: var(--radius);
   font-weight: 600;
-  font-size: 16px;
+  font-size: var(--fs-input);
   cursor: pointer;
   width: 100%;
   text-align: center;
@@ -496,7 +598,7 @@ footer {
   color: white;
   text-align: center;
   padding: var(--space-sm) var(--space-md);
-  font-size: 12px;
+  font-size: var(--fs-footer);
 }
 
 .email-link {
@@ -505,16 +607,11 @@ footer {
   text-decoration: none;
 }
 
-
 /* RESPONSIVE BREAKPOINTS */
 
 @media (min-width: 420px) {
   .hero-content {
-    max-width: 420px;
-  }
-
-  .hero-content h2 {
-    font-size: 28px;
+    max-width: 100%;
   }
 
   #expertise p {
@@ -544,19 +641,44 @@ footer {
   }
 
   #offerings {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .hero-content {
-    max-width: none;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
   }
 
-  .hero-content h2 {
-    font-size: 42px;
-  } 
+  #results {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--space-lg);
+    row-gap: var(--space-sm);
+    align-items: start;
+  }
+
+  #results > h2:first-of-type,
+  #results > p {
+    grid-column: 1 / -1;
+  }
+
+  #results > h2:nth-of-type(2),
+  #results > table {
+    grid-column: 1;
+  }
+
+  #results > h2:nth-of-type(3),
+  #results > #bar-chart {
+    grid-column: 2;
+  }
+
+  #results table,
+  #bar-chart {
+    margin: 0;
+    max-width: 100%;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -574,5 +696,9 @@ footer {
   #bar-chart,
   #contact form {
     max-width: 900px;
+  }
+
+  #offerings {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
