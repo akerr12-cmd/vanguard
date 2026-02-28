@@ -194,7 +194,7 @@ h3 {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.75);
   z-index: 0;
 }
 
@@ -309,6 +309,7 @@ h3 {
 .nav-links a {
   color: var(--clr-blue);
   text-decoration: none;
+  font-size: var(--fs-subheading);
   font-weight: 600;
 }
 
@@ -321,7 +322,7 @@ h3 {
   position: relative;
   z-index: 20;
   margin: 180px auto 180px auto;
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 0.15);
   width: 100%;
   max-width: 100%;
   text-align: center;
@@ -362,7 +363,7 @@ h3 {
 #expertise {
   padding: var(--space-lg) var(--space-sm);
   max-width: var(--max-width);
-  text-align: center;
+  text-align: left;
   line-height: 1.35;
   font-size: var(--fs-body);
   font-weight: 600;
@@ -376,9 +377,10 @@ h3 {
 }
 
 #expertise p {
-  max-width: 420px;
+  max-width: 100%;
   text-align: left;
-  margin: 0 auto;
+  margin: 0;
+  width: 100%;
   color: #333;
 }
 
@@ -440,8 +442,9 @@ h3 {
 }
 
 #results p {
-  max-width: 650px;
-  margin: 0 auto var(--space-lg);
+  max-width: 100%;
+  width: 100%;
+  margin: 0 0 var(--space-lg) 0;
   font-size: var(--fs-body);
 }
 
@@ -618,7 +621,7 @@ footer {
   }
 
   #expertise p {
-    max-width: 520px;
+    max-width: 100%;
   }
 }
 
