@@ -128,7 +128,7 @@ h3 {
 .nav-left {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
   position: relative;
   z-index: 20;
@@ -428,7 +428,7 @@ h3 {
 #contact {
   background: black;
   color: white;
-  padding: var(--space-xl) var(--space-md);
+  padding: var(--space-md) var(--space-md);
   text-align: left;
 }
 
@@ -465,7 +465,7 @@ h3 {
   border: 3px solid var(--clr-blue);
   color: var(--clr-white);
   font-size: 16px;
-  padding: 16px 0px;
+  padding: 14px 0px;
 }
 
 #contact textarea {
@@ -495,12 +495,32 @@ footer {
   background: black;
   color: white;
   text-align: center;
-  padding: var(--space-lg) var(--space-md);
-  font-size: 15px;
-  margin-top: 0;
+  padding: var(--space-sm) var(--space-md);
+  font-size: 12px;
 }
 
+.email-link {
+  color: #1b76d1;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+
 /* RESPONSIVE BREAKPOINTS */
+
+@media (min-width: 420px) {
+  .hero-content {
+    max-width: 420px;
+  }
+
+  .hero-content h2 {
+    font-size: 28px;
+  }
+
+  #expertise p {
+    max-width: 520px;
+  }
+}
 
 @media (min-width: 600px) {
   #offerings {
@@ -537,4 +557,22 @@ footer {
   .hero-content h2 {
     font-size: 42px;
   } 
+}
+
+@media (min-width: 1200px) {
+  #expertise,
+  #offerings,
+  #results,
+  #contact {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+  }
+
+  #results table,
+  #bar-chart,
+  #contact form {
+    max-width: 900px;
+  }
 }
