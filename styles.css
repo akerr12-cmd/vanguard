@@ -38,9 +38,7 @@ body {
   line-height: 1.6;
 }
 
-/* =========================================================
-   HEADER + HERO
-========================================================= */
+/* HEADER & HERO */
 .hero-header {
   background-image: url("images/vanguard-hero.jpg");
   background-size: cover;
@@ -223,137 +221,152 @@ body {
   color: #e8f1ff;
 }
 
-/* =========================================================
-   RESULTS SECTION (FULL BLUE BACKGROUND)
-========================================================= */
+/* RESULTS SECTION */
+
 #results {
-    background: #1b76d1; /* Vanguard blue */
-    color: white;
-    padding: var(--space-xl) var(--space-md);
-    margin-top: var(--space-xl);
-    text-align: center;
+  background: #1b76d1; /* Vanguard blue */
+  color: white;
+  padding: var(--space-xl) var(--space-md);
+  margin-top: var(--space-xl);
+  text-align: center;
 }
 
 #results h2 {
-    font-size: 2rem;
-    margin-bottom: var(--space-md);
+  font-size: 2rem;
+  margin-bottom: var(--space-md);
 }
 
 #results p {
-    max-width: 650px;
-    margin: 0 auto var(--space-lg);
-    font-size: 1rem;
+  max-width: 650px;
+  margin: 0 auto var(--space-lg);
+  font-size: 1rem;
 }
-
 
 /* RESULTS SECTION (FULL BLUE BACKGROUND) */
 
 #results {
-    background: #1b76d1; /* Vanguard blue */
-    color: white;
-    padding: var(--space-xl) var(--space-md);
-    margin-top: var(--space-xl);
-    text-align: left; /* NEW: left-align all text */
+  background: #1b76d1; /* Vanguard blue */
+  color: white;
+  padding: var(--space-xl) var(--space-md);
+  margin-top: var(--space-xl);
+  text-align: left; /* NEW: left-align all text */
 }
 
 #results p {
-    max-width: 650px;
-    margin: 0 auto var(--space-lg);
-    font-size: 1rem;
+  max-width: 650px;
+  margin: 0 auto var(--space-lg);
+  font-size: 1rem;
 }
-
 
 /* PROFITS TABLE */
 
 /* Default: ALL rows black, including header */
 #results table thead tr,
 #results table tbody tr {
-    background: #111; /* black */
-}
-
-#results table {
-    width: 100%;
-    border-collapse: collapse;
-    color: white;
-    overflow: hidden;
-    margin: 0 auto var(--space-xl);
-    max-width: 700px;
-}
-
-/* Header text */
-#results th {
-    padding: var(--space-sm);
-    font-weight: 700;
-    text-align: left;
-    font-size: 0.95rem;
-    color: white;
-    border: 1px solid #3D3D3D; /* matching gray */
-}
-
-/* Table cells */
-#results td {
-    padding: var(--space-sm);
-    border: 1px solid #3D3D3D; /* matching gray */
-    font-size: 0.95rem;
-}
-
-/* Remove last border */
-#results tr:last-child td {
-    border-bottom: none;
+  background: #111; /* black */
 }
 
 /* Gray highlight rows: 2021 and 2023 */
 #results table tbody tr:nth-child(2),
 #results table tbody tr:nth-child(4) {
-    background: #3D3D3D; /* matching gray */
+  background: #3d3d3d; /* matching gray */
+}
+
+#results table {
+  width: 100%;
+  border-collapse: collapse;
+  color: white;
+  overflow: hidden;
+  margin: 0 auto var(--space-md);
+  max-width: 700px;
+}
+
+/* Header text */
+#results th {
+  padding: var(--space-sm);
+  font-weight: 700;
+  text-align: left;
+  font-size: 0.95rem;
+  color: white;
+  border: 1px solid #3d3d3d; /* matching gray */
+}
+
+/* Table cells */
+#results td {
+  padding: var(--space-sm);
+  border: 1px solid #3d3d3d; /* matching gray */
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+/* Remove last border */
+#results tr:last-child td {
+  border-bottom: none;
 }
 
 /* BAR CHART */
 #bar-chart {
-    display: flex;
-    justify-content: center;
-    gap: var(--space-md);
-    align-items: flex-end;
-    height: 220px;
-    background: #1b76d1; /* Vanguard blue */
-    padding: var(--space-md);
-    border-radius: var(--radius);
-    max-width: 700px;
-    margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  align-items: flex-end;
+  height: 220px;
+  background: #1b76d1; /* Vanguard blue */
+  padding: var(--space-md);
+  border-radius: var(--radius);
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 /* Bars */
 .bar {
-    width: 45px;
-    background: #3D3D3D; /* matching gray */
-    border-radius: var(--radius);
-    height: var(--height);
-    position: relative;
+  width: 45px;
+  background: #3d3d3d; /* matching gray */
+  border-radius: var(--radius);
+  height: var(--height);
+  position: relative;
 }
 
 /* Year labels */
 .bar::after {
-    content: attr(data-year);
-    position: absolute;
-    bottom: -1.6rem;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 0.85rem;
-    color: white;
-    text-align: center; /* ensure centered */
+  content: attr(data-year);
+  position: absolute;
+  bottom: -1.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.85rem;
+  color: white;
+  text-align: center; /* ensure centered */
 }
 
 /* CONTACT SECTION */
 #contact {
+  background: black;
+  color: white;
   padding: var(--space-xl) var(--space-md);
-  max-width: var(--max-width);
-  margin: 0 auto;
+  margin-top: var(--space-xl);
+  text-align: left;
 }
 
+#contact h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: var(--space-md);
+}
+
+#contact p {
+  max-width: 650px;
+  margin: 0 auto var(--space-lg);
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* Contact form style */
 #contact form {
+  max-width: 700px;
+  margin: 0 auto;
   display: grid;
   gap: var(--space-md);
-  margin-top: var(--space-md);
 }
 
 #contact input,
