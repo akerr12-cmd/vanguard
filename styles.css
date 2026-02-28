@@ -1,15 +1,10 @@
 /* CSS BY Amanda Kerr */
 
-/* ============================================================
-   IMPORTED FONTS
-   ============================================================ */
+/* IMPORTED FONTS */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
 
-/* ============================================================
-   CSS RESET
-   http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126 | License: none (public domain)
-   ============================================================ */
+/* CSS RESET http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126 | License: none (public domain) */
 
 html,
 body,
@@ -99,6 +94,7 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -147,12 +143,8 @@ table {
 :root {
   --clr-white: #ffffff;
   --clr-black: #000000;
-  --clr-dark: #111111;
-  --clr-gray: #333333;
-  --clr-light-gray: #e0e0e0;
 
   --clr-blue: #1b76d1; /* Vanguard Blue */
-  --clr-blue-light: #4a90e2; /* Bar chart blue */
 
   --font-main: "Inter", sans-serif;
 
@@ -160,7 +152,6 @@ table {
   --space-sm: 16px;
   --space-md: 24px;
   --space-lg: 40px;
-  --space-xl: 64px;
 
   --radius: 8px;
   --max-width: 1024px;
@@ -214,14 +205,14 @@ h3 {
   top: 0;
   left: 0;
   width: 100%;
-  height: 140px; /* adjust height as needed */
+  height: 140px;
   background: rgba(0, 0, 0, 0.9);
   z-index: 5;
 }
 
 .header-blue-bar {
   position: absolute;
-  top: 140px; /* matches overlay height */
+  top: 140px; /* matches the overlay height */
   left: 0;
   width: 100%;
   height: 8px;
@@ -231,7 +222,6 @@ h3 {
     rgba(27, 118, 209, 0)
   );
   z-index: 6;
-  padding-top: var(--space-sm);
 }
 
 /* NAVIGATION */
@@ -266,7 +256,7 @@ h3 {
   display: block;
 }
 
-/* HAMBURGER TOGGLE (pure CSS checkbox) */
+/* HAMBURGER TOGGLE (per this weeks lesson*/
 .nav-toggle-input {
   display: none;
 }
@@ -306,7 +296,7 @@ h3 {
   top: 8px;
 }
 
-/* MOBILE MENU (HIDDEN BY DEFAULT) */
+/* MOBILE MENU (HIDDEN by hamburger menu) */
 
 .nav-links {
   list-style: none;
@@ -749,15 +739,9 @@ footer {
 
   /* Hero */
   .hero-content {
-    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-  }
-
-  /* Expertise */
-  #expertise p {
-    max-width: 100%;
   }
 
   /* Offerings: 2-column grid */
