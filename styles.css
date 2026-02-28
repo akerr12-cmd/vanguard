@@ -163,7 +163,7 @@ table {
   --fs-body: clamp(14px, 1.4vw, 16px);
   --fs-table: clamp(14px, 1.4vw, 16px);
   --fs-input: clamp(15px, 1.5vw, 17px);
-  --fs-footer: clamp(12px, 1.1vw, 14px);
+  --fs-footer: clamp(11px, 1.5vw, 16px);
 }
 
 /* GLOBAL STYLES (mobile first/small) */
