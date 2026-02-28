@@ -141,12 +141,13 @@ table {
 /* ROOT VARIABLES */
 
 :root {
-  --clr-white: #ffffff;
-  --clr-black: #000000;
-
-  --clr-blue: #1b76d1; /* Vanguard Blue */
-
-  --font-main: "Inter", sans-serif;
+  --white: #eaeaea;
+  --black: #000000;
+  --blue: #007bff; /* Vanguard Blue */
+  --red: #ff4500;
+  --charcoal: #333333;
+  --orange: #884c02;
+  --font: "Inter", sans-serif;
 
   --space-xs: 8px;
   --space-sm: 16px;
@@ -169,10 +170,21 @@ table {
 /* GLOBAL STYLES (mobile first/small) */
 
 body {
-  font-family: var(--font-main);
+  font-family: var(--font);
   background: #f5f5f5;
-  color: var(--clr-black);
+  color: var(--black);
   line-height: 1.6;
+  min-width: 400px; /* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
 }
 
 h2,
@@ -188,7 +200,7 @@ h3 {
   margin: 0 auto;
 }
 
-/* HEADER & HERO */
+/* HERO HEADER  (Innovation & Investment — Photo by Kevin Matos on Unsplash) */
 .hero-header {
   background-image: url("images/vanguard-hero.jpg");
   background-size: cover;
@@ -197,7 +209,7 @@ h3 {
   padding: var(--space-lg) var(--space-md);
   position: relative;
   text-align: center;
-  color: var(--clr-white);
+  color: var(--white);
 }
 
 .hero-header::before {
@@ -208,6 +220,7 @@ h3 {
   z-index: 0;
 }
 
+/* TOP BLACK BAR — sits behind the nav */
 .header-overlay {
   position: absolute;
   top: 0;
@@ -218,6 +231,7 @@ h3 {
   z-index: 5;
 }
 
+/* THIN BLUE ACCENT BAR directly below the black bar */
 .header-blue-bar {
   position: absolute;
   top: 140px; /* matches the overlay height */
@@ -242,12 +256,30 @@ h3 {
   z-index: 20;
 }
 
+/* FLOATING SVG LOGO BEFORE THE H1 */
+.nav-logo svg {
+  width: clamp(42px, 5vw, 80px);
+  height: auto;
+  display: block;
+}
+
+/* FLOATING SVG LOGO BEFORE THE H1 */
 .site-title {
   font-size: var(--fs-site-title);
   font-weight: 700;
-  color: var(--clr-blue);
+  color: var(--blue);
   margin: 0;
   white-space: nowrap;
+}
+
+.site-title::before {
+  content: "";
+  display: none; /* decorative fallback — shown only if inline SVG is removed */
+  position: relative;
+  left: -0.5rem;
+  width: 3.75rem;
+  height: 3.75rem;
+  background: url("images/vanguard-logo.svg") no-repeat center / contain;
 }
 
 .main-nav {
@@ -258,43 +290,41 @@ h3 {
   z-index: 20;
 }
 
-.nav-logo svg {
-  width: clamp(42px, 5vw, 80px);
-  height: auto;
-  display: block;
-}
-
-/* HAMBURGER TOGGLE (per this weeks lesson*/
+/* ---- Hamburger CSS-only toggle ---- */
 .nav-toggle-input {
   display: none;
 }
 
 .nav-toggle-label {
-  background: none;
-  border: none;
+  display: flex;
+  align-items: center;
   cursor: pointer;
-  display: block;
+  padding: 0.3rem;
   z-index: 20;
 }
 
-.hamburger {
-  width: 28px;
-  height: 3px;
-  background: var(--clr-white);
-  border-radius: 2px;
-  position: relative;
+.hamburger,
+.hamburger::before,
+.hamburger::after {
   display: block;
+  width: 26px;
+  height: 3px;
+  background-color: var(--white);
+  border-radius: 2px;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.hamburger {
+  position: relative;
 }
 
 .hamburger::before,
 .hamburger::after {
   content: "";
-  width: 28px;
-  height: 3px;
-  background: var(--clr-white);
   position: absolute;
   left: 0;
-  border-radius: 2px;
 }
 
 .hamburger::before {
@@ -304,6 +334,17 @@ h3 {
   top: 8px;
 }
 
+/* Animate hamburger → × when open */
+.nav-toggle-input:checked ~ .nav-toggle-label .hamburger {
+  background: transparent;
+}
+.nav-toggle-input:checked ~ .nav-toggle-label .hamburger::before {
+  transform: translateY(8px) rotate(45deg);
+}
+.nav-toggle-input:checked ~ .nav-toggle-label .hamburger::after {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
 /* MOBILE MENU (HIDDEN by hamburger menu) */
 
 .nav-links {
@@ -311,8 +352,8 @@ h3 {
   position: absolute;
   top: 100%;
   right: 0;
-  background: rgba(0, 0, 0, 0.85);
-  width: 200px;
+  background: rgba(0, 0, 0, 0.96);
+  width: 100%;
   padding: var(--space-md);
   display: none;
   flex-direction: column;
@@ -320,11 +361,13 @@ h3 {
   border-radius: var(--radius);
 }
 
-.nav-links a {
-  color: var(--clr-blue);
+.nav-links li a {
+  color: var(--blue);
   text-decoration: none;
   font-size: var(--fs-subheading);
   font-weight: 600;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
   display: block;
   padding: 6px 12px;
   border-radius: var(--radius);
@@ -333,9 +376,9 @@ h3 {
     color 0.2s ease;
 }
 
-.nav-links a:hover {
-  background: var(--clr-blue);
-  color: var(--clr-black);
+.nav-links li a:hover {
+  background: var(--blue);
+  color: var(--black);
 }
 
 .nav-toggle-input:checked ~ .nav-links {
@@ -375,8 +418,8 @@ h3 {
 
 .cta-btn {
   display: inline-block;
-  background: var(--clr-blue);
-  color: var(--clr-white);
+  background: var(--blue);
+  color: var(--white);
   padding: var(--space-sm) var(--space-md);
   border-radius: var(--radius);
   text-decoration: none;
@@ -413,8 +456,8 @@ h3 {
 }
 
 .cta-btn:hover {
-  background: #884c02;
-  color: var(--clr-white);
+  background: var(--orange);
+  color: var(--white);
 }
 
 /* EXPERTISE SECTION */
@@ -467,8 +510,8 @@ h3 {
 }
 
 #offerings article {
-  background: var(--clr-blue);
-  color: var(--clr-white);
+  background: var(--blue);
+  color: var(--white);
   padding: 24px 16px 16px 16px;
   border-radius: var(--radius);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -504,7 +547,7 @@ h3 {
 
 /* RESULTS SECTION */
 #results {
-  background: #1b76d1; /* Vanguard blue */
+  background: var(--blue); /* Vanguard blue */
   color: white;
   padding: var(--space-md) var(--space-md);
   margin-top: var(--space-lg);
@@ -585,7 +628,7 @@ h3 {
   align-items: flex-end;
   height: 320px;
   width: 100%;
-  background: #1b76d1; /* Vanguard blue */
+  background: var(--blue); /* Vanguard blue */
   padding: var(--space-md) var(--space-sm) var(--space-lg) var(--space-sm);
   border-radius: var(--radius);
   max-width: 700px;
@@ -597,7 +640,7 @@ h3 {
   flex: 1;
   min-width: 0;
   max-width: 80px;
-  background: #3d3d3d;
+  background: var(--charcoal);
   border-radius: var(--radius);
   height: 0;
   position: relative;
@@ -638,14 +681,14 @@ h3 {
   left: 50%;
   transform: translateX(-50%);
   font-size: var(--fs-body);
-  color: white;
+  color: var(--white);
   text-align: center; /* ensure centered */
 }
 
 /* CONTACT SECTION */
 #contact {
-  background: black;
-  color: white;
+  background: var(--black);
+  color: var(--white);
   padding: var(--space-md) var(--space-md);
   text-align: left;
 }
@@ -679,11 +722,11 @@ h3 {
 #contact input,
 #contact textarea {
   width: 100%;
-  background: var(--clr-white);
-  border: 3px solid var(--clr-blue);
-  color: var(--clr-white);
+  background: var(--white);
+  border: 3px solid var(--blue);
+  color: var(--black);
   font-size: var(--fs-input);
-  padding: 14px 0px;
+  padding: 14px 12px; /* increased padding for better touch targets */
 }
 
 #contact input:focus,
@@ -698,8 +741,8 @@ h3 {
 }
 
 #contact button {
-  background: var(--clr-blue);
-  color: var(--clr-white);
+  background: var(--blue);
+  color: var(--white);
   padding: var(--space-sm) var(--space-md);
   border: none;
   border-radius: var(--radius);
@@ -713,22 +756,22 @@ h3 {
     color 0.2s ease;
 }
 #contact button:hover {
-  background: #884c02;
-  color: var(--clr-white);
+  background: var(--orange);
+  color: var(--white);
 }
 
 /* FOOTER */
 
 footer {
-  background: black;
-  color: white;
+  background: var(--black);
+  color: var(--white);
   text-align: center;
   padding: var(--space-sm) var(--space-md);
   font-size: var(--fs-footer);
 }
 
 .email-link {
-  color: #1b76d1;
+  color: var(--blue);
   font-weight: 600;
   text-decoration: none;
 }
