@@ -21,11 +21,11 @@
 
   --font-main: "Inter", sans-serif;
 
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 1.5rem;
-  --space-lg: 2.5rem;
-  --space-xl: 4rem;
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 40px;
+  --space-xl: 64px;
 
   --radius: 8px;
   --max-width: 1200px;
@@ -148,7 +148,7 @@ body {
 }
 
 .hero-content h2 {
-  font-size: 1.9rem;
+  font-size: 30px;
   margin-bottom: var(--space-sm);
 }
 
@@ -167,16 +167,14 @@ body {
 }
 
 /* EXPERTISE SECTION */
-
 #expertise {
   padding: var(--space-xl) var(--space-md);
   max-width: var(--max-width);
-  margin: 0 auto;
   text-align: center;
 }
 
 #expertise h2 {
-  font-size: 1.8rem;
+  font-size: 29px;
   margin-bottom: var(--space-sm);
   color: #0d1b2a;
 }
@@ -188,7 +186,6 @@ body {
 }
 
 /* OFFERINGS SECTION (BLUE CARDS) */
-
 #offerings {
   padding: var(--space-xl) var(--space-md);
   max-width: var(--max-width);
@@ -200,7 +197,7 @@ body {
 
 #offerings h2 {
   text-align: center;
-  font-size: 1.8rem;
+  font-size: 29px;
   margin-bottom: var(--space-lg);
   color: #0d1b2a;
 }
@@ -222,24 +219,22 @@ body {
 }
 
 /* RESULTS SECTION */
-
 #results {
   background: #1b76d1; /* Vanguard blue */
   color: white;
   padding: var(--space-xl) var(--space-md);
-  margin-top: var(--space-xl);
   text-align: center;
 }
 
 #results h2 {
-  font-size: 2rem;
+  font-size: 32px;
   margin-bottom: var(--space-md);
 }
 
 #results p {
   max-width: 650px;
   margin: 0 auto var(--space-lg);
-  font-size: 1rem;
+  font-size: 16px;
 }
 
 /* RESULTS SECTION (FULL BLUE BACKGROUND) */
@@ -255,7 +250,7 @@ body {
 #results p {
   max-width: 650px;
   margin: 0 auto var(--space-lg);
-  font-size: 1rem;
+  font-size: 16px;
 }
 
 /* PROFITS TABLE */
@@ -286,7 +281,7 @@ body {
   padding: var(--space-sm);
   font-weight: 700;
   text-align: left;
-  font-size: 0.95rem;
+  font-size: 15px;
   color: white;
   border: 1px solid #3d3d3d; /* matching gray */
 }
@@ -295,7 +290,7 @@ body {
 #results td {
   padding: var(--space-sm);
   border: 1px solid #3d3d3d; /* matching gray */
-  font-size: 0.95rem;
+  font-size: 15px;
   text-align: center;
 }
 
@@ -331,10 +326,10 @@ body {
 .bar::after {
   content: attr(data-year);
   position: absolute;
-  bottom: -1.6rem;
+  bottom: -26px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 0.85rem;
+  font-size: 14px;
   color: white;
   text-align: center; /* ensure centered */
 }
@@ -344,21 +339,20 @@ body {
   background: black;
   color: white;
   padding: var(--space-xl) var(--space-md);
-  margin-top: var(--space-xl);
   text-align: left;
 }
 
 #contact h2 {
-  text-align: center;
-  font-size: 1.8rem;
+  text-align: left;
+  font-size: 29px;
   margin-bottom: var(--space-md);
 }
 
 #contact p {
   max-width: 650px;
   margin: 0 auto var(--space-lg);
-  text-align: center;
-  font-size: 1rem;
+  text-align: left;
+  font-size: 14px;
 }
 
 /* Contact form style */
@@ -369,12 +363,24 @@ body {
   gap: var(--space-md);
 }
 
+#contact label {
+  display: block;
+  font-size: 14px;
+}
+
 #contact input,
 #contact textarea {
   width: 100%;
   padding: var(--space-sm);
-  border-radius: var(--radius);
-  border: 1px solid var(--clr-light-gray);
+  background: var(--clr-white);
+  border: 2px solid var(--clr-blue);
+  color: var(--clr-white);
+  font-size: 16px;
+}
+
+#contact textarea {
+  resize: vertical;
+  min-height: 120px;
 }
 
 #contact button {
@@ -384,15 +390,24 @@ body {
   border: none;
   border-radius: var(--radius);
   font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+}
+#contact button:hover {
+  background: var(--clr-blue-light);
 }
 
 /* FOOTER */
 
 footer {
+  background: black;
+  color: white;
   text-align: center;
   padding: var(--space-lg) var(--space-md);
-  background: var(--clr-light-gray);
-  margin-top: var(--space-xl);
+  font-size: 15px;
+  margin-top: 0;
 }
 
 /* RESPONSIVE BREAKPOINTS */
@@ -415,7 +430,7 @@ footer {
     background: none;
     width: auto;
     padding: 0;
-    gap: 2rem;
+    gap: 32px;
   }
 
   #offerings {
