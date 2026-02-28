@@ -163,7 +163,7 @@ table {
   --space-xl: 64px;
 
   --radius: 8px;
-  --max-width: 1200px;
+  --max-width: 1024px;
 
   --fs-site-title: clamp(30px, 2.2vw, 48px);
   --fs-hero-title: clamp(16px, 5.5vw, 42px);
@@ -242,7 +242,6 @@ h3 {
   gap: 10px;
   position: relative;
   z-index: 20;
-  
 }
 
 .site-title {
@@ -352,7 +351,7 @@ h3 {
   margin: 180px auto 180px auto;
   background: rgba(0, 0, 0, 0.15);
   width: 100%;
-  max-width: 100%;
+  max-width: var(--max-width);
   text-align: center;
 }
 
@@ -425,6 +424,7 @@ h3 {
 #expertise {
   padding: var(--space-lg) var(--space-sm);
   max-width: var(--max-width);
+  margin: 0 auto;
   text-align: left;
   line-height: 1.35;
   font-size: var(--fs-body);
@@ -803,17 +803,6 @@ footer {
 /* QUERY (large)min-width: 1024px */
 
 @media (min-width: 1024px) {
-  /* Center and constrain main sections */
-  #expertise,
-  #offerings,
-  #results,
-  #contact {
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: var(--space-lg);
-    padding-right: var(--space-lg);
-  }
-
   /* Offerings: 3-column grid */
   #offerings {
     grid-template-columns: repeat(3, 1fr);
