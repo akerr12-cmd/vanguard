@@ -42,10 +42,11 @@
                 <h1 class="site-title">Vanguard</h1>
             </div>
 
-            <!-- HAMBURGER BUTTON -->
-            <button class="nav-toggle" aria-label="Open Menu">
+            <!-- HAMBURGER CHECKBOX TOGGLE (NO JS) -->
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+            <label for="nav-toggle" class="nav-toggle-label" aria-label="Open Menu">
                 <span class="hamburger"></span>
-            </button>
+            </label>
 
             <!-- COLLAPSIBLE MENU -->
             <ul class="nav-links">
@@ -215,15 +216,6 @@
             <p>Phone: 480.123.4567</p>
         </address>
     </footer>
-
-    <script>
-        const navToggle = document.querySelector('.nav-toggle');
-        const navLinks = document.querySelector('.nav-links');
-
-        navToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('open');
-        });
-    </script>
 
 </body>
 

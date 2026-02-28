@@ -142,9 +142,7 @@ table {
   box-sizing: border-box;
 }
 
-/* ============================================================
-   ROOT VARIABLES
-   ============================================================ */
+/* ROOT VARIABLES */
 
 :root {
   --clr-white: #ffffff;
@@ -177,9 +175,7 @@ table {
   --fs-footer: clamp(12px, 1.1vw, 14px);
 }
 
-/* ============================================================
-   GLOBAL STYLES (mobile first/small)
-   ============================================================ */
+/* GLOBAL STYLES (mobile first/small) */
 
 body {
   font-family: var(--font-main);
@@ -269,8 +265,12 @@ h3 {
   display: block;
 }
 
-/* HAMBURGER BUTTON */
-.nav-toggle {
+/* HAMBURGER TOGGLE (pure CSS checkbox) */
+.nav-toggle-input {
+  display: none;
+}
+
+.nav-toggle-label {
   background: none;
   border: none;
   cursor: pointer;
@@ -326,9 +326,20 @@ h3 {
   text-decoration: none;
   font-size: var(--fs-subheading);
   font-weight: 600;
+  display: block;
+  padding: 6px 12px;
+  border-radius: var(--radius);
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
-.nav-links.open {
+.nav-links a:hover {
+  background: var(--clr-blue);
+  color: var(--clr-black);
+}
+
+.nav-toggle-input:checked ~ .nav-links {
   display: flex;
 }
 
@@ -371,6 +382,14 @@ h3 {
   font-weight: 600;
   margin-left: auto;
   margin-right: auto;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.cta-btn:hover {
+  background: #884c02;
+  color: var(--clr-white);
 }
 
 /* EXPERTISE SECTION */
@@ -427,6 +446,23 @@ h3 {
   padding: 24px 16px 16px 16px;
   border-radius: var(--radius);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+#offerings article:hover {
+  animation: card-bounce 0.4s ease;
+}
+
+@keyframes card-bounce {
+  0% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 #offerings article h3 {
@@ -529,10 +565,38 @@ h3 {
   flex: 1;
   min-width: 0;
   max-width: 80px;
-  background: #3d3d3d; /* matching gray */
+  background: #3d3d3d;
   border-radius: var(--radius);
   height: var(--height);
   position: relative;
+  animation: grow-bar 0.5s ease both;
+  animation-timeline: view();
+}
+
+/* Stagger each bar by offsetting when its animation range starts */
+.bar:nth-child(1) {
+  animation-range: entry 0% entry 40%;
+}
+.bar:nth-child(2) {
+  animation-range: entry 5% entry 45%;
+}
+.bar:nth-child(3) {
+  animation-range: entry 10% entry 50%;
+}
+.bar:nth-child(4) {
+  animation-range: entry 15% entry 55%;
+}
+.bar:nth-child(5) {
+  animation-range: entry 20% entry 60%;
+}
+
+@keyframes grow-bar {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--height);
+  }
 }
 
 /* Year labels */
@@ -613,9 +677,13 @@ h3 {
   cursor: pointer;
   width: 100%;
   text-align: center;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 #contact button:hover {
-  background: var(--clr-blue-light);
+  background: #884c02;
+  color: var(--clr-white);
 }
 
 /* FOOTER */
@@ -634,14 +702,11 @@ footer {
   text-decoration: none;
 }
 
-/* ============================================================
-   MEDIA QUERY (medium)
-   min-width: 800px
-   ============================================================ */
+/* MEDIA QUERY (medium) min-width: 800px */
 
 @media (min-width: 800px) {
   /* Switch from hamburger to inline nav */
-  .nav-toggle {
+  .nav-toggle-label {
     display: none;
   }
 
@@ -708,10 +773,7 @@ footer {
   }
 }
 
-/* ============================================================
-   MEDIA QUERY (large)
-   min-width: 1024px
-   ============================================================ */
+/* QUERY (large)min-width: 1024px */
 
 @media (min-width: 1024px) {
   /* Center and constrain main sections */
