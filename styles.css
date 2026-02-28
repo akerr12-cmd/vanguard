@@ -77,6 +77,12 @@ body {
   line-height: 1.6;
 }
 
+h2,
+h3 {
+  padding-left: 12px;   /* subtle, readable indent */
+}
+
+
 /* HEADER & HERO */
 .hero-header {
   background-image: url("images/vanguard-hero.jpg");
@@ -217,28 +223,26 @@ body {
   position: relative;
   z-index: 20;
   margin: 180px auto 180px auto;
-  padding: var(--space-lg) var(--space-md);
   background: rgba(0, 0, 0, 0.35);
   width: 100%;
-  max-width: 700px;
+  max-width: 400px;
   text-align: center;
 }
 
 .hero-content h2 {
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 700;
   letter-spacing: -0.5px;
   line-height: 1.15;
-  margin-bottom: 16px;
   text-align: center;
-
+  padding: var(--space-sm);
   white-space: normal;     /* allow natural wrapping */
   overflow: visible;
   text-overflow: unset;
 }
 
-
 .hero-content p {
+    font-size: 14px;
   margin-bottom: var(--space-md);
   text-align: center;
 }
@@ -258,20 +262,24 @@ body {
 /* EXPERTISE SECTION */
 
 #expertise {
-  padding: var(--space-xl) var(--space-md);
+  padding: var(--space-lg) var(--space-sm);
   max-width: var(--max-width);
-  margin: 0 auto;
   text-align: center;
+  line-height: 1.35;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 #expertise h2 {
   font-size: 29px;
+  font-weight: 800;
   margin-bottom: var(--space-sm);
   color: #0d1b2a;
 }
 
 #expertise p {
-  max-width: 650px;
+  max-width: 420px;
+  text-align: left;
   margin: 0 auto;
   color: #333;
 }
@@ -279,71 +287,60 @@ body {
 /* OFFERINGS SECTION (BLUE CARDS) */
 
 #offerings {
-  padding: var(--space-xl) var(--space-md);
+  padding: var(--space-md) var(--space-sm);
   max-width: var(--max-width);
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-md);
+  gap: var(--space-sm);
 }
 
 #offerings h2 {
-  text-align: center;
+  text-align: left;
   font-size: 29px;
-  margin-bottom: var(--space-lg);
+  font-weight: 800;
   color: #0d1b2a;
 }
 
 #offerings article {
   background: var(--clr-blue);
   color: var(--clr-white);
-  padding: var(--space-lg);
+  padding: 24px 16px 16px 16px;
   border-radius: var(--radius);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 #offerings article h3 {
   margin-bottom: var(--space-xs);
+  font-size: 18px;
+  font-weight: 700;
 }
 
 #offerings article p {
   color: #e8f1ff;
+  font-size: 14px;
 }
 
 /* RESULTS SECTION */
 #results {
   background: #1b76d1; /* Vanguard blue */
   color: white;
-  padding: var(--space-xl) var(--space-md);
-  margin-top: var(--space-xl);
-  text-align: center;
+  padding: var(--space-md) var(--space-md);
+  margin-top: var(--space-lg);
+  text-align: left;
 }
 
 #results h2 {
-  font-size: 32px;
+    text-align: left;
+  font-size: 29px;
+  font-weight: 800;
   margin-bottom: var(--space-md);
 }
 
 #results p {
   max-width: 650px;
   margin: 0 auto var(--space-lg);
-  font-size: 16px;
-}
-
-/* RESULTS SECTION (FULL BLUE BACKGROUND) */
-
-#results {
-  background: #1b76d1; /* Vanguard blue */
-  color: white;
-  padding: var(--space-xl) var(--space-md);
-  margin-top: var(--space-xl);
-  text-align: left; /* NEW: left-align all text */
-}
-
-#results p {
-  max-width: 650px;
-  margin: 0 auto var(--space-lg);
-  font-size: 16px;
+  font-size: 14px;
 }
 
 /* PROFITS TABLE */
@@ -373,7 +370,7 @@ body {
 #results th {
   padding: var(--space-sm);
   font-weight: 700;
-  text-align: left;
+  text-align: center;
   font-size: 15px;
   color: white;
   border: 1px solid #3d3d3d; /* matching gray */
@@ -464,16 +461,16 @@ body {
 #contact input,
 #contact textarea {
   width: 100%;
-  padding: var(--space-sm);
   background: var(--clr-white);
-  border: 2px solid var(--clr-blue);
+  border: 3px solid var(--clr-blue);
   color: var(--clr-white);
   font-size: 16px;
+  padding: 16px 0px;
 }
 
 #contact textarea {
   resize: vertical;
-  min-height: 120px;
+  min-height: 80px;
 }
 
 #contact button {
