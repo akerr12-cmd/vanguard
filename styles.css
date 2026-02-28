@@ -1,198 +1,417 @@
-/* -----------------------------------
-   GLOBAL RESET
------------------------------------ */
+/* =========================================================
+   RESET + ROOT VARIABLES
+========================================================= */
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-    --clr-primary: #ffffff;
-    --clr-accent: #1b76d1;
-    --clr-dark: rgba(0, 0, 0, 0.65);
-    --max-width: 1200px;
+  --clr-white: #ffffff;
+  --clr-black: #000000;
+  --clr-dark: #111111;
+  --clr-gray: #333333;
+  --clr-light-gray: #e0e0e0;
 
-    --space-xs: 0.5rem;
-    --space-sm: 1rem;
-    --space-md: 1.5rem;
-    --space-lg: 2.5rem;
-    --space-xl: 4rem;
+  --clr-blue: #1b76d1; /* Vanguard Blue */
+  --clr-blue-light: #4a90e2; /* Bar chart blue */
 
-    --radius: 8px;
-    --font-main: "Inter", sans-serif;
+  --font-main: "Inter", sans-serif;
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+
+  --radius: 8px;
+  --max-width: 1200px;
 }
 
 body {
-    font-family: var(--font-main);
-    color: var(--clr-primary);
-    background: #f5f5f5;
-    line-height: 1.6;
+  font-family: var(--font-main);
+  background: #f5f5f5;
+  color: var(--clr-black);
+  line-height: 1.6;
 }
 
-
-/* Custom Styles for Vanguard Website */
-
-/* header header styles */
+/* =========================================================
+   HEADER + HERO
+========================================================= */
 .hero-header {
-    background-image: url('images/vanguard-hero.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-image: url("images/vanguard-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   padding: var(--space-lg) var(--space-md);
   position: relative;
   text-align: center;
+  color: var(--clr-white);
 }
 
-/* Dark overlay behind hero content */
 .hero-header::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.55);
-    z-index: 0;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 0;
 }
 
-/* Navigation Base */
+/* NAVIGATION */
 .main-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 10;
 }
 
-.nav-logo {
-    display: flex;
-    align-items: center;
-    gap: var(--space-xs);
+.nav-logo img {
+  width: 42px;
+  height: auto;
 }
 
-.nav-logo .logo {
-    width: 42px;
-    height: auto;
-}
-
-/* Hamburger Menu for Mobile */
+/* HAMBURGER BUTTON */
 .nav-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: block;
-    z-index: 20;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+  z-index: 20;
 }
 
 .hamburger {
-    width: 28px;
-    height: 3px;
-    background: white;
-    position: relative;
-    display: block;
-    border-radius: 2px;
+  width: 28px;
+  height: 3px;
+  background: var(--clr-white);
+  border-radius: 2px;
+  position: relative;
+  display: block;
 }
 
 .hamburger::before,
 .hamburger::after {
-    content: "";
-    width: 28px;
-    height: 3px;
-    background: white;
-    position: absolute;
-    left: 0;
-    border-radius: 2px;
+  content: "";
+  width: 28px;
+  height: 3px;
+  background: var(--clr-white);
+  position: absolute;
+  left: 0;
+  border-radius: 2px;
 }
 
 .hamburger::before {
-    top: -8px;
+  top: -8px;
 }
-
 .hamburger::after {
-    top: 8px;
+  top: 8px;
 }
 
-/* Mobile Menu (hidden by default) */
+/* MOBILE MENU (HIDDEN BY DEFAULT) */
+
 .nav-links {
-    list-style: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: rgba(0, 0, 0, 0.85);
-    width: 200px;
-    padding: 1rem;
-    display: none;
-    flex-direction: column;
-    gap: 1rem;
-    border-radius: 8px;
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: rgba(0, 0, 0, 0.85);
+  width: 200px;
+  padding: var(--space-md);
+  display: none;
+  flex-direction: column;
+  gap: var(--space-sm);
+  border-radius: var(--radius);
 }
 
 .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
+  color: var(--clr-white);
+  text-decoration: none;
+  font-weight: 600;
 }
 
-/* When menu is open */
 .nav-links.open {
-    display: flex;
+  display: flex;
 }
 
-/* Hero Content */
+/* HERO CONTENT */
 .hero-content {
-    position: relative;
-    z-index: 2;
-    margin-top: var(--space-xl);
-    padding: var(--space-lg) var(--space-md);
-    background: var(--clr-dark);
-    border-radius: var(--radius);
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+  position: relative;
+  z-index: 10;
+  margin-top: var(--space-xl);
+  padding: var(--space-lg) var(--space-md);
+  background: rgba(0, 0, 0, 0.65);
+  border-radius: var(--radius);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-content h2 {
-    font-size: 1.9rem;
-    margin-bottom: var(--space-sm);
+  font-size: 1.9rem;
+  margin-bottom: var(--space-sm);
 }
 
 .hero-content p {
-    font-size: 1rem;
-    margin-bottom: var(--space-md);
+  margin-bottom: var(--space-md);
 }
 
 .cta-btn {
-    display: inline-block;
-    background: var(--clr-accent);
-    color: var(--clr-primary);
-    padding: var(--space-sm) var(--space-md);
-    border-radius: var(--radius);
-    text-decoration: none;
-    font-weight: 600;
+  display: inline-block;
+  background: var(--clr-blue);
+  color: var(--clr-white);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* EXPERTISE SECTION */
+
+#expertise {
+  padding: var(--space-xl) var(--space-md);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  text-align: center;
+}
+
+#expertise h2 {
+  font-size: 1.8rem;
+  margin-bottom: var(--space-sm);
+  color: #0d1b2a;
+}
+
+#expertise p {
+  max-width: 650px;
+  margin: 0 auto;
+  color: #333;
+}
+
+/* OFFERINGS SECTION (BLUE CARDS) */
+
+#offerings {
+  padding: var(--space-xl) var(--space-md);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+#offerings h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: var(--space-lg);
+  color: #0d1b2a;
+}
+
+#offerings article {
+  background: var(--clr-blue);
+  color: var(--clr-white);
+  padding: var(--space-lg);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+#offerings article h3 {
+  margin-bottom: var(--space-xs);
+}
+
+#offerings article p {
+  color: #e8f1ff;
+}
+
+/* =========================================================
+   RESULTS SECTION (FULL BLUE BACKGROUND)
+========================================================= */
+#results {
+    background: #1b76d1; /* Vanguard blue */
+    color: white;
+    padding: var(--space-xl) var(--space-md);
+    margin-top: var(--space-xl);
+    text-align: center;
+}
+
+#results h2 {
+    font-size: 2rem;
+    margin-bottom: var(--space-md);
+}
+
+#results p {
+    max-width: 650px;
+    margin: 0 auto var(--space-lg);
     font-size: 1rem;
 }
 
-/* Responsive Breakpoints */
 
-/* Desktop */
-@media (min-width: 900px) {
+/* RESULTS SECTION (FULL BLUE BACKGROUND) */
 
-    /* Hide hamburger */
-    .nav-toggle {
-        display: none;
-    }
+#results {
+    background: #1b76d1; /* Vanguard blue */
+    color: white;
+    padding: var(--space-xl) var(--space-md);
+    margin-top: var(--space-xl);
+    text-align: left; /* NEW: left-align all text */
+}
 
-    /* Desktop menu layout */
-    .nav-links {
-        position: static;
-        display: flex !important;
-        flex-direction: row;
-        background: none;
-        width: auto;
-        padding: 0;
-        gap: 2rem;
-    }
+#results p {
+    max-width: 650px;
+    margin: 0 auto var(--space-lg);
+    font-size: 1rem;
 }
 
 
+/* PROFITS TABLE */
 
+/* Default: ALL rows black, including header */
+#results table thead tr,
+#results table tbody tr {
+    background: #111; /* black */
+}
+
+#results table {
+    width: 100%;
+    border-collapse: collapse;
+    color: white;
+    overflow: hidden;
+    margin: 0 auto var(--space-xl);
+    max-width: 700px;
+}
+
+/* Header text */
+#results th {
+    padding: var(--space-sm);
+    font-weight: 700;
+    text-align: left;
+    font-size: 0.95rem;
+    color: white;
+    border: 1px solid #3D3D3D; /* matching gray */
+}
+
+/* Table cells */
+#results td {
+    padding: var(--space-sm);
+    border: 1px solid #3D3D3D; /* matching gray */
+    font-size: 0.95rem;
+}
+
+/* Remove last border */
+#results tr:last-child td {
+    border-bottom: none;
+}
+
+/* Gray highlight rows: 2021 and 2023 */
+#results table tbody tr:nth-child(2),
+#results table tbody tr:nth-child(4) {
+    background: #3D3D3D; /* matching gray */
+}
+
+/* BAR CHART */
+#bar-chart {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    align-items: flex-end;
+    height: 220px;
+    background: #1b76d1; /* Vanguard blue */
+    padding: var(--space-md);
+    border-radius: var(--radius);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Bars */
+.bar {
+    width: 45px;
+    background: #3D3D3D; /* matching gray */
+    border-radius: var(--radius);
+    height: var(--height);
+    position: relative;
+}
+
+/* Year labels */
+.bar::after {
+    content: attr(data-year);
+    position: absolute;
+    bottom: -1.6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.85rem;
+    color: white;
+    text-align: center; /* ensure centered */
+}
+
+/* CONTACT SECTION */
+#contact {
+  padding: var(--space-xl) var(--space-md);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+#contact form {
+  display: grid;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+#contact input,
+#contact textarea {
+  width: 100%;
+  padding: var(--space-sm);
+  border-radius: var(--radius);
+  border: 1px solid var(--clr-light-gray);
+}
+
+#contact button {
+  background: var(--clr-blue);
+  color: var(--clr-white);
+  padding: var(--space-sm) var(--space-md);
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 600;
+}
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+  padding: var(--space-lg) var(--space-md);
+  background: var(--clr-light-gray);
+  margin-top: var(--space-xl);
+}
+
+/* RESPONSIVE BREAKPOINTS */
+
+@media (min-width: 600px) {
+  #offerings {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-links {
+    position: static;
+    display: flex !important;
+    flex-direction: row;
+    background: none;
+    width: auto;
+    padding: 0;
+    gap: 2rem;
+  }
+
+  #offerings {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .hero-content {
+    max-width: 450px;
+    text-align: left;
+    margin-left: 0;
+  }
+}
