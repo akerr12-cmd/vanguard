@@ -158,8 +158,8 @@ table {
 
   --fs-site-title: clamp(30px, 2.2vw, 48px);
   --fs-hero-title: clamp(16px, 5.5vw, 42px);
-  --fs-heading: clamp(20px, 4.2vw, 36px);
-  --fs-subheading: clamp(16px, 2.8vw, 22px);
+  --fs-heading: clamp(24px, 4.2vw, 36px);
+  --fs-subheading: clamp(18px, 2.8vw, 22px);
   --fs-body: clamp(14px, 1.4vw, 16px);
   --fs-table: clamp(14px, 1.4vw, 16px);
   --fs-input: clamp(15px, 1.5vw, 17px);
@@ -508,6 +508,12 @@ h3 {
   font-size: var(--fs-heading);
   font-weight: 800;
   margin-bottom: var(--space-md);
+}
+
+#results h3 {
+  font-size: var(--fs-subheading);
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
 }
 
 #results p {
