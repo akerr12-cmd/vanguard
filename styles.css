@@ -1,12 +1,51 @@
-/* =========================================================
-   RESET + ROOT VARIABLES
-========================================================= */
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* RESET + ROOT VARIABLES */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 :root {
@@ -58,18 +97,57 @@ body {
   z-index: 0;
 }
 
+.header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px; /* adjust height as needed */
+  background: rgba(0, 0, 0, 0.90);
+  z-index: 5;
+}
+
+.header-blue-bar {
+  position: absolute;
+  top: 120px; /* matches overlay height */
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient( to bottom, rgba(27, 118, 209, 1), rgba(27, 118, 209, 0) );
+  z-index: 6;
+}
+
+
 /* NAVIGATION */
+.nav-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  z-index: 20;
+}
+
+.site-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--clr-blue);
+  margin: 0;
+  white-space: nowrap;
+}
+
 .main-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
-  z-index: 10;
+  z-index: 20;
 }
 
 .nav-logo img {
   width: 42px;
   height: auto;
+  display: block;
 }
 
 /* HAMBURGER BUTTON */
@@ -125,7 +203,7 @@ body {
 }
 
 .nav-links a {
-  color: var(--clr-white);
+  color: var(--clr-blue);
   text-decoration: none;
   font-weight: 600;
 }
@@ -137,8 +215,8 @@ body {
 /* HERO CONTENT */
 .hero-content {
   position: relative;
-  z-index: 10;
-  margin-top: var(--space-xl) auto o auto;
+  z-index: 20;
+  margin: 180px auto 180px auto;
   padding: var(--space-lg) var(--space-md);
   background: rgba(0, 0, 0, 0.35);
   width: 100%;
@@ -453,7 +531,7 @@ footer {
   }
 
   .hero-content {
-    max-width: 800px;
+    max-width: none;
     margin-left: auto;
     margin-right: auto;
     text-align: center;

@@ -27,12 +27,19 @@
     <!-- HERO HEADER WITH BACKGROUND IMAGE -->
     <header class="hero-header">
 
+        <!-- TOP BLACK BAR -->
+        <div class="header-overlay"></div>
+
+        <!-- BLUE BAR UNDER BLACK BAR -->
+        <div class="header-blue-bar"></div>
+
         <!-- NAVIGATION BAR -->
         <nav class="main-nav" aria-label="Main Navigation">
-            <div class="nav-logo">
-                <a href="#">
+            <div class="nav-left">
+                <a href="/" class="nav-logo">
                     <img src="images/vanguard-logo.svg" alt="Vanguard Logo" class="logo">
                 </a>
+                <h1 class="site-title">Vanguard</h1>
             </div>
 
             <!-- HAMBURGER BUTTON -->
@@ -203,14 +210,14 @@
         <p>Phone: 480.123.4567</p>
     </footer>
 
-<script>
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
+    <script>
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
 
-    navToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('open');
-    });
-</script>
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+    </script>
 
 </body>
 
