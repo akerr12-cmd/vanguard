@@ -614,24 +614,14 @@ footer {
 }
 
 /* RESPONSIVE BREAKPOINTS */
+/* Mobile-first: base styles above target the smallest screens.
+   Medium  →  min-width: 800px
+   Large   →  min-width: 1024px
+*/
 
-@media (min-width: 420px) {
-  .hero-content {
-    max-width: 100%;
-  }
-
-  #expertise p {
-    max-width: 100%;
-  }
-}
-
-@media (min-width: 600px) {
-  #offerings {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 900px) {
+/* ── MEDIUM (800px+) ─────────────────────────────────────── */
+@media (min-width: 800px) {
+  /* Switch from hamburger to inline nav */
   .nav-toggle {
     display: none;
   }
@@ -646,10 +636,7 @@ footer {
     gap: 32px;
   }
 
-  #offerings {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
+  /* Hero */
   .hero-content {
     max-width: 100%;
     margin-left: auto;
@@ -657,6 +644,17 @@ footer {
     text-align: center;
   }
 
+  /* Expertise */
+  #expertise p {
+    max-width: 100%;
+  }
+
+  /* Offerings: 2-column grid */
+  #offerings {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Results: table left, chart right */
   #results {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -691,7 +689,9 @@ footer {
   }
 }
 
-@media (min-width: 1200px) {
+/* ── LARGE (1024px+) ─────────────────────────────────────── */
+@media (min-width: 1024px) {
+  /* Center and constrain main sections */
   #expertise,
   #offerings,
   #results,
@@ -702,13 +702,14 @@ footer {
     padding-right: var(--space-lg);
   }
 
+  /* Offerings: 3-column grid */
+  #offerings {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   #results table,
   #bar-chart,
   #contact form {
     max-width: 900px;
-  }
-
-  #offerings {
-    grid-template-columns: repeat(3, 1fr);
   }
 }
