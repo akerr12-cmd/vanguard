@@ -1,8 +1,15 @@
-/* RESET + ROOT VARIABLES */
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+/* CSS BY Amanda Kerr */
+
+/* ============================================================
+   IMPORTED FONTS
+   ============================================================ */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
+
+/* ============================================================
+   CSS RESET
+   http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126 | License: none (public domain)
+   ============================================================ */
 
 html,
 body,
@@ -135,6 +142,10 @@ table {
   box-sizing: border-box;
 }
 
+/* ============================================================
+   ROOT VARIABLES
+   ============================================================ */
+
 :root {
   --clr-white: #ffffff;
   --clr-black: #000000;
@@ -165,6 +176,10 @@ table {
   --fs-input: clamp(15px, 1.5vw, 17px);
   --fs-footer: clamp(12px, 1.1vw, 14px);
 }
+
+/* ============================================================
+   GLOBAL STYLES (mobile first/small)
+   ============================================================ */
 
 body {
   font-family: var(--font-main);
@@ -548,7 +563,7 @@ h3 {
 
 #contact p {
   max-width: 650px;
-  margin: 0 auto var(--space-lg);
+  margin-bottom: var(--space-sm);
   text-align: left;
   font-size: var(--fs-body);
 }
@@ -574,6 +589,12 @@ h3 {
   color: var(--clr-white);
   font-size: var(--fs-input);
   padding: 14px 0px;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  outline: none;
+  border-color: #28a745;
 }
 
 #contact textarea {
@@ -613,13 +634,11 @@ footer {
   text-decoration: none;
 }
 
-/* RESPONSIVE BREAKPOINTS */
-/* Mobile-first: base styles above target the smallest screens.
-   Medium  →  min-width: 800px
-   Large   →  min-width: 1024px
-*/
+/* ============================================================
+   MEDIA QUERY (medium)
+   min-width: 800px
+   ============================================================ */
 
-/* ── MEDIUM (800px+) ─────────────────────────────────────── */
 @media (min-width: 800px) {
   /* Switch from hamburger to inline nav */
   .nav-toggle {
@@ -689,7 +708,11 @@ footer {
   }
 }
 
-/* ── LARGE (1024px+) ─────────────────────────────────────── */
+/* ============================================================
+   MEDIA QUERY (large)
+   min-width: 1024px
+   ============================================================ */
+
 @media (min-width: 1024px) {
   /* Center and constrain main sections */
   #expertise,
@@ -708,8 +731,19 @@ footer {
   }
 
   #results table,
-  #bar-chart,
-  #contact form {
+  #bar-chart {
     max-width: 900px;
+  }
+
+  /* Contact form: 2-column layout */
+  /* Col 1: Full Name, Company Name, How can we help you?  */
+  /* Col 2: Email Address, Industry, Submit button         */
+  #contact form {
+    grid-template-columns: 1fr 1fr;
+    max-width: 100%;
+  }
+
+  #contact button {
+    align-self: start;
   }
 }
