@@ -552,14 +552,14 @@ h3 {
 
 /* PROFITS TABLE */
 
-#results table {
+table {
   width: 100%;
   color: var(--white);
   font-size: 14px;
 }
 
 /* Header text */
-#results th {
+th {
   padding: 12px 14px;
   font-weight: 700;
   text-align: center;
@@ -568,7 +568,7 @@ h3 {
 }
 
 /* Table cells */
-#results td {
+td {
   padding: 10px 16px;
   background-color: var(--black);
   border: 1px solid var(--charcoal); /* matching gray */
@@ -582,7 +582,7 @@ tbody tr:nth-child(4) td {
 }
 
 /* Remove last border */
-#results tr:last-child td {
+table tr:last-child td {
   border-bottom: none;
 }
 
