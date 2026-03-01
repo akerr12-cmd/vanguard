@@ -736,9 +736,9 @@ footer {
   text-decoration: underline;
 }
 
-/* MEDIA QUERY (medium) min-width: 768px+ */
+/* MEDIA QUERY (medium) min-width: 800px+ */
 
-@media (min-width: 768px) {
+@media (min-width: 800px) {
   /* Switch from hamburger to inline nav */
   .nav-toggle-label {
     display: none;
