@@ -94,7 +94,6 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
-
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -132,14 +131,7 @@ table {
   border-spacing: 0;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 /* ROOT VARIABLES */
-
 :root {
   --white: #eaeaea;
   --black: #000000;
@@ -151,9 +143,14 @@ table {
 }
 
 /* GLOBAL STYLES (mobile first/small) */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 body {
-  font: var(--font);
+  font-family: var(--font);
   background: var(--white);
   color: var(--black);
   line-height: 1.6;
@@ -331,7 +328,6 @@ h3 {
 }
 
 /* MOBILE MENU/NAV LINKS (HIDDEN by hamburger menu) */
-
 .nav-links {
   list-style: none;
   flex-direction: column;
@@ -376,10 +372,10 @@ h3 {
   color: var(--white);
   position: relative;
   z-index: 1;
-  width: 100%;
+  width: 90%;
   max-width: 640px;
-  margin: 180px auto 140px auto;
-  background: rgba(0, 0, 0, 0.15);
+  margin: auto;
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .hero-content h2 {
@@ -470,7 +466,7 @@ h3 {
   background-color: var(--white);
   padding: 32px 5%;
   display: flex;
-  flex-wrap: column;
+  flex-direction: column;
   gap: 16px;
 }
 
@@ -738,7 +734,7 @@ footer {
 
 .email-link:hover {
   text-decoration: underline;
-} 
+}
 
 /* MEDIA QUERY (medium) min-width: 768px+ */
 
@@ -806,13 +802,13 @@ footer {
   form label:nth-child(5),
   form button[type="submit"] {
     grid-column: 1 / -1;
-  } 
+  }
 }
 
 /* QUERY (large)min-width: 1024px+ */
 
 @media (min-width: 1024px) {
-.hero-content {
+  .hero-content {
     font-size: 56px;
   }
 
@@ -828,12 +824,12 @@ footer {
 
   #expertise,
   #offerings,
-  #results, {
+  #results {
     padding: 64px 5%;
   }
 
- /* Textarea left col, Submit button right col */
- form label:nth-child(5) {
+  /* Textarea left col, Submit button right col */
+  form label:nth-child(5) {
     grid-column: 1 / 2;
   }
 
