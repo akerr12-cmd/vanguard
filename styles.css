@@ -726,15 +726,19 @@ footer {
   background: var(--black);
   color: var(--white);
   text-align: center;
-  padding: var(--space-sm) var(--space-md);
-  font-size: var(--fs-footer);
+  padding: 32px 5%;
+  border-top: 1px solid var(--black);
+  font-size: 16px;
+  line-height: 2;
 }
 
 .email-link {
   color: var(--blue);
-  font-weight: 600;
-  text-decoration: none;
 }
+
+.email-link:hover {
+  text-decoration: underline;
+} 
 
 /* MEDIA QUERY (medium) min-width: 800px */
 
