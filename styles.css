@@ -467,30 +467,26 @@ h3 {
 /* OFFERINGS SECTION (BLUE CARDS) */
 
 #offerings {
-  padding: var(--space-md) var(--space-sm);
-  max-width: var(--max-width);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-sm);
+  background-color: var(--white);
+  padding: 32px 5%;
+  display: flex;
+  flex-wrap: column;
+  gap: 16px;
 }
 
 #offerings h2 {
   text-align: left;
-  font-size: var(--fs-heading);
-  font-weight: 800;
-  color: #0d1b2a;
-}
-
-#offerings > h2 {
-  grid-column: 1 / -1;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 8px;
 }
 
 #offerings article {
   background: var(--blue);
   color: var(--white);
-  padding: 24px 16px 16px 16px;
-  border-radius: var(--radius);
+  padding: 24px;
+  border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   cursor: pointer;
 }
@@ -512,43 +508,36 @@ h3 {
 }
 
 #offerings article h3 {
-  margin-bottom: var(--space-xs);
-  font-size: var(--fs-subheading);
+  font-size: 17px;
+  margin-bottom: 8px;
+  line-height: 1.3;
   font-weight: 700;
 }
 
 #offerings article p {
-  color: #e8f1ff;
-  font-size: var(--fs-body);
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.92;
 }
 
 /* RESULTS SECTION */
 #results {
-  background: var(--blue); /* Vanguard blue */
-  color: white;
-  padding: var(--space-md) var(--space-md);
-  margin-top: var(--space-lg);
-  text-align: left;
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 48px 5%;
 }
 
 #results h2 {
-  text-align: left;
-  font-size: var(--fs-heading);
-  font-weight: 800;
-  margin-bottom: var(--space-md);
-}
-
-#results h3 {
-  font-size: var(--fs-subheading);
+  font-size: 28px;
   font-weight: 700;
-  margin-bottom: var(--space-sm);
+  margin-bottom: 12px;
 }
 
 #results p {
-  max-width: 100%;
-  width: 100%;
-  margin: 0 0 var(--space-lg) 0;
-  font-size: var(--fs-body);
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 32px;
+  opacity: 0.9;
 }
 
 /* PROFITS TABLE */
