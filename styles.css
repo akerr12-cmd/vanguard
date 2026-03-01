@@ -216,7 +216,7 @@ h3 {
 /* THIN BLUE ACCENT BAR directly below the black bar */
 .header-blue-bar {
   position: absolute;
-  top: 100px; /* matches the overlay height */
+  top: 80px; /* matches the overlay height */
   left: 0;
   width: 100%;
   height: 8px;
@@ -367,50 +367,57 @@ h3 {
 
 /* HERO CONTENT */
 .hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px 16px 0 16px;
+  color: var(--white);
   position: relative;
-  z-index: 20;
+  z-index: 1;
+  width: 100%;
+  max-width: 640px;
   margin: 180px auto 140px auto;
   background: rgba(0, 0, 0, 0.15);
-  width: 100%;
-  max-width: var(--max-width);
-  text-align: center;
 }
 
 .hero-content h2 {
-  font-size: var(--fs-hero-title);
+  font-size: 28px;
   font-weight: 700;
-  letter-spacing: -0.5px;
-  line-height: 1.15;
-  text-align: center;
-  padding: var(--space-sm);
-  white-space: normal;
-  overflow: visible;
-  text-overflow: unset;
+  line-height: 1.2;
   animation: drop-in 0.7s ease forwards;
-  opacity: 0;
 }
 
 .hero-content p {
-  font-size: var(--fs-body);
-  margin-bottom: var(--space-md);
-  text-align: center;
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 100%;
+  margin-bottom: 32px;
+  color: var(--white);
+  opacity: 0;
+  animation: fade-up 0.7s ease 0.4s forwards;
 }
 
 .cta-btn {
   display: inline-block;
   background: var(--blue);
   color: var(--white);
-  padding: var(--space-sm) var(--space-md);
-  border-radius: var(--radius);
-  text-decoration: none;
+  padding: 14px 32px;
+  border-radius: 6px;
+  font-size: 16px;
   font-weight: 600;
-  margin-left: auto;
-  margin-right: auto;
+  letter-spacing: 1.2px;
+  border: none;
+  cursor: pointer;
   transition:
-    background 0.2s ease,
-    color 0.2s ease;
-  animation: fade-up 0.6s ease 0.8s forwards;
-  opacity: 0;
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.cta-btn:hover {
+  background-color: var(--orange);
+  transform: translateY(-2px);
 }
 
 @keyframes drop-in {
@@ -435,36 +442,26 @@ h3 {
   }
 }
 
-.cta-btn:hover {
-  background: var(--orange);
-  color: var(--white);
-}
-
 /* EXPERTISE SECTION */
 
 #expertise {
-  padding: var(--space-lg) var(--space-sm);
-  max-width: var(--max-width);
-  margin: 0 auto;
-  text-align: left;
-  line-height: 1.35;
-  font-size: var(--fs-body);
-  font-weight: 600;
+  background-color: var(--white);
+  padding: 48px 5%;
 }
 
 #expertise h2 {
-  font-size: var(--fs-heading);
-  font-weight: 800;
-  margin-bottom: var(--space-sm);
-  color: #0d1b2a;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--black);
+  line-height: 1.3;
 }
 
 #expertise p {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--charcoal);
   max-width: 100%;
-  text-align: left;
-  margin: 0;
-  width: 100%;
-  color: #333;
 }
 
 /* OFFERINGS SECTION (BLUE CARDS) */
