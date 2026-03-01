@@ -740,9 +740,9 @@ footer {
   text-decoration: underline;
 } 
 
-/* MEDIA QUERY (medium) min-width: 800px */
+/* MEDIA QUERY (medium) min-width: 768px+ */
 
-@media (min-width: 800px) {
+@media (min-width: 768px) {
   /* Switch from hamburger to inline nav */
   .nav-toggle-label {
     display: none;
@@ -752,81 +752,95 @@ footer {
     position: static;
     display: flex !important;
     flex-direction: row;
-    background: none;
+    position: static;
+    background: transparent;
     width: auto;
     padding: 0;
-    gap: 32px;
+    gap: 40px;
   }
 
-  /* Hero */
+  /* Hero text larger */
   .hero-content {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+    font-size: 44px;
   }
 
   /* Offerings: 2-column grid */
   #offerings {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  #offerings h2 {
+    grid-column: 1 / -1;
   }
 
   /* Results: table left, chart right */
   #results {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: var(--space-lg);
-    row-gap: var(--space-sm);
-    align-items: stretch;
+    column-gap: 48px;
   }
 
-  #results > h2:first-of-type,
+  #results > h2,
   #results > p {
     grid-column: 1 / -1;
   }
 
   .profits-container {
     grid-column: 1;
+    margin-bottom: 0;
   }
 
   .growth-container {
     grid-column: 2;
-    display: flex;
-    flex-direction: column;
+    margin-bottom: 0;
   }
 
-  .growth-container #bar-chart {
-    flex: 1;
+  /* Contact form - 2 column grid */
+  #contact form {
+    grid-template-columns: 1fr 1fr;
   }
 
-  .profits-container table,
-  .growth-container #bar-chart {
-    margin: 0;
-    max-width: 100%;
-  }
+  /* Textarea and submit button span both columns */
+  form label:nth-child(5),
+  form button[type="submit"] {
+    grid-column: 1 / -1;
+  } 
 }
 
-/* QUERY (large)min-width: 1024px */
+/* QUERY (large)min-width: 1024px+ */
 
 @media (min-width: 1024px) {
+.hero-content {
+    font-size: 56px;
+  }
+
+  .hero-content p {
+    font-size: 18px;
+  }
+
   /* Offerings: 3-column grid */
   #offerings {
     grid-template-columns: repeat(3, 1fr);
+    padding: 48px 5%;
   }
 
-  #results table,
-  #bar-chart {
-    max-width: 900px;
+  #expertise,
+  #offerings,
+  #results, {
+    padding: 64px 5%;
   }
 
-  /* Contact form: 2-column layout */
-  /* Col 1: Full Name, Company Name, How can we help you?  */
-  /* Col 2: Email Address, Industry, Submit button         */
-  #contact form {
-    grid-template-columns: 1fr 1fr;
-    max-width: 100%;
+ /* Textarea left col, Submit button right col */
+ form label:nth-child(5) {
+    grid-column: 1 / 2;
   }
 
-  #contact button {
+  form button[type="submit"] {
+    grid-column: 2 / 3;
     align-self: start;
+    margin-top: 30px;
+    width: 100%;
   }
 }
