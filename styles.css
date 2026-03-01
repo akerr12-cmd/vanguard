@@ -793,16 +793,11 @@ footer {
     margin-bottom: 0;
   }
 
-  /* Contact form - 2 column grid */
-  #contact form {
-    grid-template-columns: 1fr 1fr;
+  /* Contact form - single column */
+  form {
+    grid-template-columns: 1fr;
   }
 
-  /* Textarea and submit button span both columns */
-  form label:nth-child(5),
-  form button[type="submit"] {
-    grid-column: 1 / -1;
-  }
 }
 
 /* QUERY (large)min-width: 1024px+ */
@@ -826,6 +821,11 @@ footer {
   #offerings,
   #results {
     padding: 64px 5%;
+  }
+
+  /*contact form - 2 even column grid */
+  form {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   /* Textarea left col, Submit button right col */
