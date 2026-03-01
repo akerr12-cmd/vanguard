@@ -540,19 +540,20 @@ h3 {
   opacity: 0.9;
 }
 
+.profits-container,
+.growth-container {
+  margin-bottom: 32px;
+}
+
+.profits-container h3,
+.growth-container h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--white);
+}
+
 /* PROFITS TABLE */
-
-/* Default: ALL rows black, including header */
-#results table thead tr,
-#results table tbody tr {
-  background: #111; /* black */
-}
-
-/* Gray highlight rows: 2021 and 2023 */
-#results table tbody tr:nth-child(2),
-#results table tbody tr:nth-child(4) {
-  background: #3d3d3d; /* matching gray */
-}
 
 #results table {
   width: 100%;
