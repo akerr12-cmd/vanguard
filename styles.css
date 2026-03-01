@@ -148,23 +148,6 @@ table {
   --charcoal: #333333;
   --orange: #884c02;
   --font: "Inter", sans-serif;
-
-  --space-xs: 8px;
-  --space-sm: 16px;
-  --space-md: 24px;
-  --space-lg: 40px;
-
-  --radius: 8px;
-  --max-width: 1024px;
-
-  --fs-site-title: clamp(30px, 2.2vw, 48px);
-  --fs-hero-title: clamp(16px, 5.5vw, 42px);
-  --fs-heading: clamp(24px, 4.2vw, 36px);
-  --fs-subheading: clamp(18px, 2.8vw, 22px);
-  --fs-body: clamp(14px, 1.4vw, 16px);
-  --fs-table: clamp(14px, 1.4vw, 16px);
-  --fs-input: clamp(15px, 1.5vw, 17px);
-  --fs-footer: clamp(11px, 1.5vw, 16px);
 }
 
 /* GLOBAL STYLES (mobile first/small) */
@@ -202,14 +185,13 @@ h3 {
 
 /* HERO HEADER  (Innovation & Investment — Photo by Kevin Matos on Unsplash) */
 .hero-header {
-  background-image: url("images/vanguard-hero.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: var(--space-lg) var(--space-md);
+  background: url("images/vanguard-hero.jpg") no-repeat center center / cover;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
   position: relative;
-  text-align: center;
-  color: var(--white);
+  min-height: 420px;
 }
 
 .hero-header::before {
@@ -226,7 +208,7 @@ h3 {
   top: 0;
   left: 0;
   width: 100%;
-  height: 140px;
+  height: 100px;
   background: rgba(0, 0, 0, 0.9);
   z-index: 5;
 }
@@ -234,7 +216,7 @@ h3 {
 /* THIN BLUE ACCENT BAR directly below the black bar */
 .header-blue-bar {
   position: absolute;
-  top: 140px; /* matches the overlay height */
+  top: 100px; /* matches the overlay height */
   left: 0;
   width: 100%;
   height: 8px;
@@ -389,7 +371,7 @@ h3 {
 .hero-content {
   position: relative;
   z-index: 20;
-  margin: 180px auto 180px auto;
+  margin: 180px auto 140px auto;
   background: rgba(0, 0, 0, 0.15);
   width: 100%;
   max-width: var(--max-width);
