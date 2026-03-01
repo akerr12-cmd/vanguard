@@ -443,7 +443,7 @@ h3 {
 
 #expertise {
   background-color: var(--white);
-  padding: 48px 5%;
+  padding: 24px 5%;
 }
 
 #expertise h2 {
@@ -465,7 +465,7 @@ h3 {
 
 #offerings {
   background-color: var(--white);
-  padding: 32px 5%;
+  padding: 16px 5%;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -814,13 +814,13 @@ footer {
   /* Offerings: 3-column grid */
   #offerings {
     grid-template-columns: repeat(3, 1fr);
-    padding: 48px 5%;
+    padding: 24px 5%;
   }
 
   #expertise,
   #offerings,
   #results {
-    padding: 64px 5%;
+    padding: 32px 5%;
   }
 
   /*contact form - 2 even column grid */
